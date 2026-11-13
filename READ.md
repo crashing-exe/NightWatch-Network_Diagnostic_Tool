@@ -27,13 +27,10 @@
 ## ***--Testing Results--***
 
 ###### Note: Tests performed + outcomes
-Target Validation:
+Target Validation + DNS Investigation:
 Test Case 01: Trying google.com
-Test Case 02: Trying youtube.com
-Test Case 03: Trying https://www.discord.com
-Test Case 04 = Empty input from user
+Test Case 02: Trying localhost
+Test Case 03: Trying an empty input
+Test Case 04: Trying ahh.com
 
-DNS Investigation:
-Test Case 01: when target = google.com
-Test Case 02: when target = https://www.discord.com
-Test Case 01: when target = ahh.com
+I struggled alot with getting the aliases to be displayed individually → possible solution: create list for accepted  aliases then have the program compare with the input
