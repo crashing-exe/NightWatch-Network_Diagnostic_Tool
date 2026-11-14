@@ -1,5 +1,6 @@
 import socket # module that provides network communication
 import time
+import subprocess # enable execution of external programs + commands on computer
 from pip._internal.resolution.resolvelib import found_candidates
 
 def calculateResponseTime():
@@ -45,8 +46,10 @@ def hostnameResolved(target_address):
 
     print(f"\n\t[INFO] Total Response Time: {calculateResponseTime()} ms")
 
-    print("\n\n====================\n\n\t\tINVESTIGATION COMPLETE\n\n====================")
-
+def pingtest(target_address):
+    print("\n\n//SYSTEM MESSAGE: PING TEST LOADING...//")
+    result = subprocess.run(["ping", target_address], capture_output=True, text=True)
+    print(f"\n{result.stdout}")
 
 #Program title + intro
 print ("//SYSTEM LOADING...//\n\n====================\n\n\t\tNIGHTWATCH v1.0\n\t\tNETWORK DIAGNOSTICS\n\n====================")
@@ -56,6 +59,10 @@ print("\n//SYSTEM MESSAGE:Welcome to NIGHTWATCH! (^u ^)//\nInitialising diagnost
 target_address = input("\nEnter a hostname or IP address:\t")
 
 hostnameResolved(target_address)
+
+pingtest(target_address)
+
+print("\n\n====================\n\n\t\tINVESTIGATION COMPLETE\n\n====================\n\n[HALT] End OF PROGRAM")
 
 
 
